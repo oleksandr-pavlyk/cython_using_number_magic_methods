@@ -104,8 +104,7 @@ def add(x1, x2):
 
 
 def _multiply_Quaternion(q1, q2):
-    return Quaternion.__new__(
-        Quaternion,
+    return Quaternion(
         q1.x_ * q2.x_ - q1.y_ * q2.y_ - q1.z_ * q2.z_ - q1.w_ * q2.w_,  # x
         q1.x_ * q2.y_ + q1.y_ * q2.x_ + q1.z_ * q2.w_ - q1.w_ * q2.z_,  # y
         q1.x_ * q2.z_ + q1.z_ * q2.x_ - q1.y_ * q2.w_ + q1.w_ * q2.y_,  # z
@@ -114,20 +113,19 @@ def _multiply_Quaternion(q1, q2):
 
 
 def _multiply_scalar(q, f):
-    return Quaternion.__new__(
-        Quaternion, f * q.x_, f * q.y_, f * q.z_, f * q.w_
+    return Quaternion(
+        f * q.x_, f * q.y_, f * q.z_, f * q.w_
     )
 
 
 def _add_scalar(q, a):
-    return Quaternion.__new__(
-        Quaternion, a + q.x_, q.y_, q.z_, q.w_
+    return Quaternion(
+        a + q.x_, q.y_, q.z_, q.w_
     )
 
 
 def _add_Quaternion(q1, q2):
-    return Quaternion.__new__(
-        Quaternion,
+    return Quaternion(
         q1.x_ + q2.x_,
         q1.y_ + q2.y_,
         q1.z_ + q2.z_,
