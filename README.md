@@ -22,3 +22,19 @@ q.__rmul__(2.0) # also raises, and prints message from `__mul__`
                 # does not print any messages from `__rmul__`
 
 ```
+
+This is in contrast to behavior of Python extension
+
+```python
+import py_quarternion as m
+
+q = m.Quaternion(1, 2, 3, 4)
+
+print(q * 2.0)  # works as expected, calls `Quaternion.__mul__(q, 2.0)`
+                # magic method
+
+print(2.0 * q)  # work as expected, calls `Quaternion.__rmul__(q, 2.0)`
+
+q.__rmul__(2.0) # print message from `__rmul__` and give expected result
+
+```
