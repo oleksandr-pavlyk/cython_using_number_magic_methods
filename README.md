@@ -6,6 +6,16 @@ python setup.py build_ext --inplace
 
 # Problem
 
+## Update
+
+For solution to the issue encountered in this example see
+https://stackoverflow.com/questions/33218006/correct-override-of-rmul-in-cython-extensions
+
+and Cython's documentation for special methods:
+
+http://docs.cython.org/en/latest/src/userguide/special_methods.html#arithmetic-methods
+
+
 ```python
 import quarternion as m
 
